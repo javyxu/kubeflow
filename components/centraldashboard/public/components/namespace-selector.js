@@ -4,6 +4,7 @@ import '@polymer/paper-button/paper-button.js';
 import '@polymer/paper-menu-button/paper-menu-button.js';
 import '@polymer/paper-listbox/paper-listbox.js';
 import '@polymer/paper-item/paper-item.js';
+import localizationMixin from './localization-mixin.js';
 
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 
@@ -11,7 +12,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
  * Component to retrieve and allow namespace selection. Bubbles the selected
  * items up to the query string in the 'ns' parameter.
  */
-export class NamespaceSelector extends PolymerElement {
+export class NamespaceSelector extends localizationMixin(PolymerElement) {
     static get template() {
         return html`
             <style>

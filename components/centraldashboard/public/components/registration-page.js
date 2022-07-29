@@ -8,6 +8,7 @@ import '@polymer/neon-animation/neon-animatable.js';
 import '@polymer/neon-animation/neon-animated-pages.js';
 import '@polymer/neon-animation/animations/fade-in-animation.js';
 import '@polymer/neon-animation/animations/fade-out-animation.js';
+import localizationMixin from './localization-mixin.js';
 
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 
@@ -23,7 +24,8 @@ import utilitiesMixin from './utilities-mixin.js';
 /**
  * Entry point for application UI.
  */
-export class RegistrationPage extends utilitiesMixin(PolymerElement) {
+export class RegistrationPage extends
+    utilitiesMixin(localizationMixin(PolymerElement)) {
     static get template() {
         const vars = {logo};
         return html([
@@ -82,8 +84,7 @@ export class RegistrationPage extends utilitiesMixin(PolymerElement) {
         const finalRgx = /^[a-z0-9]([-a-z0-9]*[a-z0-9])?$/;
         if (finalRgx.test(this.namespaceName)) return true;
         this.showError(
-            `Name can only start and end with alpha-num characters, `+
-            `dashes are only permitted between start and end. (minlength >= 1)`
+            'registrationPage.errValidation'
         );
     }
 

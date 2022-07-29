@@ -46,7 +46,7 @@ async function main() {
   const profilesService = new DefaultApi(profilesServiceUrl);
 
   app.use(express.json());
-  app.use('/dashboard',express.static(frontEnd));
+  app.use('/dashboard', express.static(frontEnd));
   app.use(attachUser(USERID_HEADER, USERID_PREFIX));
   app.get('/debug', (req: Request, res: Response) => {
     res.json({
