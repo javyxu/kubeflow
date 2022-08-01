@@ -8,6 +8,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   declarations: [StorageClassComponent],
   imports: [
@@ -17,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
+    TranslateModule.forRoot()
   ],
   exports: [StorageClassComponent],
 })

@@ -1,15 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormArray, Validators, FormBuilder } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 import {
   createExistingVolumeFormGroup,
   createNewPvcVolumeFormGroup,
   getNewVolumeSize,
   getNewVolumeType,
-  getVolumeDesc,
   getVolumeName,
   getVolumeTitle,
 } from 'src/app/shared/utils/volumes';
-import { Volume } from 'src/app/types';
 
 @Component({
   selector: 'app-form-data-volumes',

@@ -77,13 +77,12 @@
         color="primary"
         (click)="onSubmit()"
         [disabled]="!formCtrl.valid || blockSubmit"
-        i18n
       >
-        LAUNCH
+        {{ 'common.lauchCaps' | translate }}
       </button>
 
-      <button mat-raised-button type="button" (click)="onCancel()" i18n>
-        CANCEL
+      <button mat-raised-button type="button" (click)="onCancel()">
+        {{ 'common.cancelCaps' | translate }}
       </button>
     </div>
   </div>

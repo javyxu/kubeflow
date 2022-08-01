@@ -24,6 +24,10 @@ import { FormConfigurationsComponent } from './form-configurations/form-configur
 import { FormAffinityTolerationsComponent } from './form-affinity-tolerations/form-affinity-tolerations.component';
 import { VolumeModule } from './volume/volume.module';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     FormDefaultComponent,
@@ -47,6 +51,13 @@ import { VolumeModule } from './volume/volume.module';
     MatButtonToggleModule,
     TitleActionsToolbarModule,
     VolumeModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     FormDefaultComponent,
@@ -62,3 +73,7 @@ import { VolumeModule } from './volume/volume.module';
   ],
 })
 export class FormDefaultModule {}
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "../static/assets/i18n/", ".json");
+}

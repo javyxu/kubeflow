@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   declarations: [VolumeMountComponent],
   imports: [
@@ -13,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    TranslateModule.forRoot()
   ],
   exports: [VolumeMountComponent],
 })

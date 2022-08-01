@@ -8,35 +8,38 @@ import {
   DialogConfig,
   ComponentValue,
   TableConfig,
-  TABLE_THEME,
 } from 'kubeflow';
 import { ServerTypeComponent } from './server-type/server-type.component';
 
 // --- Configs for the Confirm Dialogs ---
 export function getDeleteDialogConfig(name: string): DialogConfig {
   return {
-    title: $localize`Are you sure you want to delete this notebook server? ${name}`,
-    message: $localize`Warning: Your data might be lost if the notebook server
-                       is not backed by persistent storage`,
-    accept: $localize`DELETE`,
+    title: {
+      key: 'dialog.deleteDialogTitle',
+      params: {name: name}
+    },
+    message: 'dialog.deleteDialogMessage',
+    accept: 'common.deleteCaps',
     confirmColor: 'warn',
-    cancel: $localize`CANCEL`,
+    cancel: 'common.cancelCaps',
     error: '',
-    applying: $localize`DELETING`,
+    applying: 'dialog.deletingCaps',
     width: '600px',
   };
 }
 
 export function getStopDialogConfig(name: string): DialogConfig {
   return {
-    title: $localize`Are you sure you want to stop this notebook server? ${name}`,
-    message: $localize`Warning: Your data might be lost if the notebook server
-                       is not backed by persistent storage.`,
-    accept: $localize`STOP`,
+    title: {
+      key: 'dialog.stopDialogTitle',
+      params: {name: name}
+    },
+    message: 'dialog.stopDialogMessage',
+    accept: 'common.stopCaps',
     confirmColor: 'primary',
-    cancel: $localize`CANCEL`,
+    cancel: 'common.cancelCaps',
     error: '',
-    applying: $localize`STOPPING`,
+    applying: 'dialog.stoppingCaps',
     width: '600px',
   };
 }
@@ -45,12 +48,12 @@ export function getStopDialogConfig(name: string): DialogConfig {
 export const defaultConfig: TableConfig = {
   columns: [
     {
-      matHeaderCellDef: $localize`Status`,
+      matHeaderCellDef: 'indexTableConfig.status',
       matColumnDef: 'status',
       value: new StatusValue(),
     },
     {
-      matHeaderCellDef: $localize`Name`,
+      matHeaderCellDef: 'indexTableConfig.name',
       matColumnDef: 'name',
       style: { width: '25%' },
       value: new PropertyValue({
@@ -60,21 +63,21 @@ export const defaultConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`Type`,
+      matHeaderCellDef: 'indexTableConfig.type',
       matColumnDef: 'type',
       value: new ComponentValue({
         component: ServerTypeComponent,
       }),
     },
     {
-      matHeaderCellDef: $localize`Age`,
+      matHeaderCellDef: 'indexTableConfig.age',
       matColumnDef: 'age',
       style: { width: '12%' },
       textAlignment: 'right',
       value: new PropertyValue({ field: 'age', truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Image`,
+      matHeaderCellDef: 'indexTableConfig.image',
       matColumnDef: 'image',
       style: { width: '30%' },
       value: new PropertyValue({
@@ -85,7 +88,7 @@ export const defaultConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`GPUs`,
+      matHeaderCellDef: 'indexTableConfig.gpus',
       matColumnDef: 'gpus',
       style: { width: '8%' },
       textAlignment: 'right',
@@ -95,21 +98,21 @@ export const defaultConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`CPUs`,
+      matHeaderCellDef: 'indexTableConfig.cpus',
       matColumnDef: 'cpu',
       style: { width: '8%' },
       textAlignment: 'right',
       value: new PropertyValue({ field: 'cpu' }),
     },
     {
-      matHeaderCellDef: $localize`Memory`,
+      matHeaderCellDef: 'indexTableConfig.memory',
       matColumnDef: 'memory',
       style: { width: '8%' },
       textAlignment: 'right',
       value: new PropertyValue({ field: 'memory' }),
     },
     {
-      matHeaderCellDef: $localize`Volumes`,
+      matHeaderCellDef: 'indexTableConfig.volumes',
       matColumnDef: 'volumes',
       value: new MenuValue({ field: 'volumes', itemsIcon: 'storage' }),
     },
@@ -120,15 +123,15 @@ export const defaultConfig: TableConfig = {
       value: new ActionListValue([
         new ActionButtonValue({
           name: 'connect',
-          tooltip: $localize`Connect to this notebook server`,
+          tooltip: 'indexTableConfig.connectTooltip',
           color: 'primary',
           field: 'connectAction',
-          text: $localize`CONNECT`,
+          text: 'indexTableConfig.connectCaps',
         }),
         new ActionIconValue({
           name: 'start-stop',
-          tooltipInit: $localize`Stop this notebook server`,
-          tooltipReady: $localize`Start this notebook server`,
+          tooltipInit: 'indexTableConfig.stopNotebookServer',
+          tooltipReady: 'indexTableConfig.startNotebookServer',
           color: '',
           field: 'startStopAction',
           iconInit: 'material:stop',
@@ -136,7 +139,7 @@ export const defaultConfig: TableConfig = {
         }),
         new ActionIconValue({
           name: 'delete',
-          tooltip: $localize`Delete this notebook server`,
+          tooltip: 'indexTableConfig.deleteTooltip',
           color: '',
           field: 'deleteAction',
           iconReady: 'material:delete',

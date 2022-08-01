@@ -7,6 +7,10 @@ import { VolumeMountModule } from './mount/mount.module';
 import { NewVolumeModule } from './new/new.module';
 import { MatButtonModule } from '@angular/material/button';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +21,18 @@ import { MatButtonModule } from '@angular/material/button';
     ExistingVolumeModule,
     VolumeMountModule,
     NewVolumeModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [ExistingVolumeModule, VolumeMountModule, NewVolumeModule],
 })
 export class VolumeModule {}
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "../static/assets/i18n/", ".json");
+}

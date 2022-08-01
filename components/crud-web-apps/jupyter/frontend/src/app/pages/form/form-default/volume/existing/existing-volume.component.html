@@ -1,17 +1,15 @@
 <mat-form-field appearance="outline" class="wide">
-  <mat-label i18n>Type</mat-label>
+  <mat-label>{{ 'volume.type' | translate }}</mat-label>
   <mat-select [value]="type" (selectionChange)="typeChanged($event.value)">
     <mat-option [value]="EXISTING_VOLUME_TYPE.PVC" i18n>
-      Kubernetes Volume
+      {{ 'volume.optK8S' | translate }}
     </mat-option>
 
     <mat-option
       [value]="EXISTING_VOLUME_TYPE.CUSTOM"
       matTooltip="Insert your custom K8s volume spec."
-      i18n-matTooltip
-      i18n
     >
-      Custom (Advanced)
+      {{ 'volume.optCustom' | translate }}
     </mat-option>
   </mat-select>
 </mat-form-field>

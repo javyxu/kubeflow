@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   declarations: [VolumeAccessModesComponent],
   imports: [
@@ -15,6 +17,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     MatRadioModule,
     MatTooltipModule,
+    TranslateModule.forRoot()
   ],
   exports: [VolumeAccessModesComponent],
 })

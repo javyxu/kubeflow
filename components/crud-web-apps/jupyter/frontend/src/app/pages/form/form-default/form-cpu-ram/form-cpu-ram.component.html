@@ -1,6 +1,5 @@
 <lib-form-section
-  title="CPU / RAM"
-  i18n-title="Title for the CPU/RAM form section"
+  title="{{ 'formSpecs.cpuRam' | translate }}"
 >
   <div class="row">
     <!--CPU-->
@@ -9,8 +8,7 @@
       min="0"
       step="0.1"
       [sizeControl]="parentForm.get('cpu')"
-      label="Requested CPUs"
-      i18n-label
+      label="{{ 'formSpecs.requestedCpu' | translate }}"
     ></lib-positive-number-input>
 
     <!--RAM-->
@@ -19,8 +17,7 @@
       min="0"
       step="0.1"
       [sizeControl]="parentForm.get('memory')"
-      label="Requested memory in Gi"
-      i18n-label
+      label="{{ 'formSpecs.requestedRamSize' | translate }}"
     ></lib-positive-number-input>
   </div>
 
@@ -29,7 +26,7 @@
       <!--CPU-->
       <div class="column">
         <mat-form-field appearance="outline" class="wide">
-          <mat-label i18n>CPU limit</mat-label>
+          <mat-label>{{ 'formSpecs.limitedCpu' | translate }}</mat-label>
           <input
             matInput
             type="number"
@@ -43,7 +40,7 @@
       <!--RAM-->
       <div class="column">
         <mat-form-field appearance="outline" class="wide">
-          <mat-label i18n> Memory limit in Gi </mat-label>
+          <mat-label>{{ 'formSpecs.limitedRamSize' | translate }}</mat-label>
           <input
             matInput
             type="number"

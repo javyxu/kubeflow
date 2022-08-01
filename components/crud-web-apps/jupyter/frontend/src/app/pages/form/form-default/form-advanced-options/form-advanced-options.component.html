@@ -1,5 +1,8 @@
-<lib-form-section title="Miscellaneous Settings" i18n-title>
+<lib-form-section 
+  title="{{ 'formAdvancedOptions.miscSettings' | translate }}"
+  text="{{ 'formAdvancedOptions.miscSettingsDesc' | translate }}"
+  >
   <mat-slide-toggle [formControl]="parentForm.get('shm')" i18n>
-    Enable Shared Memory
+    {{ 'formAdvancedOptions.enableSharedMemory' | translate }}
   </mat-slide-toggle>
 </lib-form-section>

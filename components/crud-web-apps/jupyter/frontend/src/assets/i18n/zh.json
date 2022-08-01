@@ -1,0 +1,180 @@
+{
+    "formAdvancedOptions": {
+      "miscSettings": "高级设置",
+      "miscSettingsDesc": "Notebook服务其他设置",
+      "enableSharedMemory": "是否设置共享内存"
+    },
+    "formAffinityTolerations": {
+      "affinityTolerations": "亲和度/容忍性",
+      "affinityTolerationsDesc": "配置NoteBook的亲和度/容忍性",
+      "affinityConfig": "亲和度配置",
+      "tolerationsGroup": "容忍性关系组"
+    },
+    "formConfiguration": {
+      "configurations": "启动配置项",
+      "configurationDesc": "启动Notebook服务时额外的配置项。(例如，将凭证插入为Secret，设置环境变量。)"
+    },
+    "formDataVolumes": {
+      "dataVolumes": "选择数据",
+      "dataVolumesDesc": "选择需要挂载的数据集",
+      "addVolumeCaps": "增加存储盘",
+      "attactVolumeCaps": "选择已存在的数据集"
+    },
+    "formGpus": {
+      "gpus": "设置GPU数量",
+      "gpusDesc": "设置Notebook启动时gpu的数量和类型。",
+      "numGpus": "GPU个数",
+      "gpuVendor": "GPU类型",
+      "errorGpuVendorNotFound": "在集群中没有 {{vendoruiName}}类型的GPU安装",
+      "errorGpuVendorRequired": "你必须指定一个GPU类型"
+    },
+    "formImage": {
+      "image": "镜像",
+      "frmImageDescription": "设置一个基础镜像",
+      "customImage": "自定义镜像",
+      "imageDocker": "Docker镜像",
+      "customImagePhl": "提供一个自定义镜像",
+      "imagePullPolicy": "镜像拉取策略",
+      "optAlways": "总是",
+      "optIfNotPresent": "如果存在不拉取",
+      "optNever": "从不拉取",
+      "errorImageRequired": "Please provide and Image to use",
+      "serverType": "服务类型",
+      "useJupyterLabBasedServer": "使用JupyterLab镜像",
+      "useGroupOneBasedServer": "使用CoderServer镜像",
+      "useGroupTwoBasedServer": "使用Rstuido镜像"
+    },
+    "formName": {
+      "name": "名称",
+      "nameDesc": "Specify the name of the Notebook Server and the Namespace it will belong to."
+    },
+    "formSpecs": {
+      "cpuRam": "设置CPU/内存",
+      "requestedCpu": "最小所需的CPU数",
+      "limitedCpu": "最大所需的CPU数",
+      "cpuDesc": "Specify the total amount of CPU and RAM reserved by your Notebook Server. For CPU-intensive workloads, you can choose more than 1 CPU (e.g. 1.5).",
+      "requestedRamSize": "最小所需的内存大小， 单位是Gi",
+      "limitedRamSize": "最大所需的内存大小， 单位是Gi",
+      "errorCpuRequired": "Specify number of CPUs",
+      "errorCpuNumber": "Must be a number",
+      "errorCpuMin": "Specify at least {{min}} CPUs",
+      "errorCpuMax": "Can't exceed {{max}} CPUs",
+      "errorCpuMaxLimit": " with {{gpu}} GPU(s) selected",
+      "errorRamRequired": "Specify amount of memory (e.g. 2Gi)",
+      "errorRamMin": "Specify at least {{min}}Gi of memory",
+      "errorRamMax": "Can't exceed {{max}}Gi of memory",
+      "errorRamMaxLimit": " with {{gpu}} GPU(s) selected"
+    },
+    "formWorkspaceVolume": {
+      "workspaceVolume": "工作空间盘",
+      "workspaceVolumeDesc": "将要挂载的卷配置为您的个人工作区。",
+      "ckbNoPersistent": "不要将您home文件夹作为挂载持久卷。",
+      "msgNoPersistent": "Your workspace will not be persistent. You will lose all data in it, if your notebook is terminated for any reason.",
+      "toolTipDeleteVolume": "删除卷",
+      "deleteVolume": "删除",
+      "toolTipShowVolumeDeatils": "显示卷信息",
+      "showVolumeDeatils": "打开",
+      "toolTipHideVolumeDeatils": "隐藏卷信息",
+      "hideVolumeDeatils": "收起",
+      "addVolumeCaps": "增加存储盘",
+      "attactVolumeCaps": "选择已存在的数据集"
+    },
+    "volume": {
+      "type": "类型",
+      "optNew": "新建",
+      "optEmpty": "空",
+      "optExisting": "以及存在",
+      "name": "名称",
+      "optCustomDesc": "编辑K8S的PVC",
+      "optK8S": "Kubernetes卷",
+      "optCustom": "自定义 (高级)",
+      "errorNameRequired": "The volume name can't be empty",
+      "errorNamePattern": "The volume name can only contain lowercase alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character",
+      "errorMountedVolume": "The volume is already mounted to another notebook and cannot be currently selected",
+      "sizeInGi": "大小 单位是Gi",  
+      "storageClass": "存储类型",
+      "cbxDefaultClass": "使用默认存储类型",
+      "lblClass": "类型",
+      "optEmptyClass": "无存储类",
+      "chxReadinly": "只读",
+      "mode": "权限模式",
+      "optReadWriteOnce": "读写一次",
+      "optReadOnlyMany": "只读",
+      "optReadWriteMany": "读写",
+      "mountPoint": "挂载点"
+    },
+    "resourceForm": {
+      "msgDefaultStorageClass": "No default Storage Class is set. Can't create new Disks for the new Notebook. Please use an Existing Disk."
+    },
+    "common": {
+      "deleteCaps": "删除",
+      "cancelCaps": "取消",
+      "name": "名称",
+      "type": "类型",
+      "stopCaps": "停止",
+      "status": "状态",
+      "dismissCaps": "隐藏",
+      "optNone": "无",
+      "lauchCaps": "启动"
+    },
+    "commonProject": {
+      "advancedOptions": {
+        "advancedOptions": "高级设置",
+        "hideAdvancedOptions": "隐藏高级设置"
+      },
+      "errorNegative": "不能小于0.",
+      "namespaceSelect": {
+        "selectNamespace": "选择工作空间"
+      },
+      "namespaceInput": {
+        "namespace": "命名空间",
+        "nameCannotBeEmpty": "名称不能为空",
+        "nameTooLong": "Name is too long",
+        "nameAlreadyExists": "Notebook server '{{name}}' already exists",
+        "namePattern": "Name must consist of lowercase alphanumeric characters or '-', start with an alphabetic character, and end with an alphanumeric character"
+      }
+    },
+    "dialog": {
+      "deleteDialogTitle": "确定删除这个Notebook服务嘛? {{name}}",
+      "deleteDialogMessage": "警告: 你的数据将会丢失如果没有做持久存储。",
+      "stopDialogTitle": "确定停止这个Notebook服务嘛? {{name}}",
+      "stopDialogMessage": "警告: 你的数据将会丢失如果没有做持久存储。",
+      "stoppingCaps": "正在停止",
+      "deletingCaps": "正在删除"
+    },
+    "indexTableConfig": {
+      "notebooks": "Notebook服务",
+      "newServersCaps": "新建Notebook",
+      "status": "状态",
+      "name": "名称",
+      "type": "类型",
+      "age": "时间",
+      "image": "镜像",
+      "gpus": "GPU数量",
+      "cpus": "CPU大小",
+      "memory": "内存",
+      "volumes": "存储",
+      "connectCaps": "连接",
+      "connectTooltip": "点击连接notebook服务",
+      "deleteTooltip": "删除notebook服务",
+      "startNotebookServer": "启动notebook服务",
+      "stopNotebookServer": "停止notebook服务",
+      "startingNotebookServer": "正在启动Notebook服务...",
+      "stoppingNotebookServer": "准备停止Notebook服务..."
+    },
+    "volumeTable": {
+      "title": "Notebook Volumes",
+      "thStatus": "Status",
+      "toolTipAttached": "Attached",
+      "toolTipUnattached": "Unattached",
+      "toolTipDeleting": "Deleting",
+      "thName": "Name",
+      "thSize": "Size",
+      "thUsedBy": "Used By",
+      "lblNone": "(none)",
+      "deleteDialogTitle": "You are about to delete the volume: ",
+      "deleteDialogMessage": "Are you sure you want to delete this volume? This action can't be undone.",
+      "deleteDialogYes": "Delete",
+      "deleteDialogNo": "Cancel"
+    }
+}

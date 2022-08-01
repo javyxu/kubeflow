@@ -1,8 +1,6 @@
 <lib-form-section
-  title="Workspace Volume"
-  i18n-title
-  text="Volume that will be mounted in you home directory."
-  i18n-text
+  title="{{ 'formWorkspaceVolume.workspaceVolume' | translate }}"
+  text="{{ 'formWorkspaceVolume.workspaceVolumeDesc' | translate }}"
 >
   <mat-accordion>
     <mat-expansion-panel
@@ -41,8 +39,7 @@
             <mat-icon
               *ngIf="!readonly"
               (click)="onDelete($event)"
-              matTooltip="Delete volume"
-              i18n-matTooltip
+              matTooltip="{{ 'formWorkspaceVolume.toolTipDeleteVolume' | translate }}"
               class="delete-icon"
             >
               delete
@@ -50,15 +47,14 @@
 
             <mat-icon
               *ngIf="!panelOpen"
-              matTooltip="Show volume details"
-              i18n-matTooltip
+              matTooltip="{{ 'formWorkspaceVolume.toolTipShowVolumeDeatils' | translate }}"
             >
               expand_more
             </mat-icon>
 
             <mat-icon
               *ngIf="panelOpen"
-              matTooltip="Hide volume details"
+              matTooltip="{{ 'formWorkspaceVolume.toolTipHideVolumeDeatils' | translate }}"
               i18n-matTooltip
             >
               expand_less
@@ -91,9 +87,8 @@
       [disabled]="!volGroup.disabled || readonly"
       (click)="addNewVolume()"
       mat-stroked-button
-      i18n
     >
-      + Add new volume
+      + {{ 'formWorkspaceVolume.addVolumeCaps' | translate }}
     </button>
 
     <button
@@ -102,9 +97,8 @@
       [disabled]="!volGroup.disabled || readonly"
       (click)="attachExistingVolume()"
       mat-stroked-button
-      i18n
     >
-      + Attach existing volume
+      + {{ 'formWorkspaceVolume.attactVolumeCaps' | translate }}
     </button>
   </div>
 </lib-form-section>

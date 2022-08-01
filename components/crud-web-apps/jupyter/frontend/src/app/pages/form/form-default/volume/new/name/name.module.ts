@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormModule } from 'kubeflow';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   declarations: [VolumeNameComponent],
   imports: [
@@ -17,6 +19,7 @@ import { FormModule } from 'kubeflow';
     MatCheckboxModule,
     MatInputModule,
     FormModule,
+    TranslateModule.forRoot()
   ],
   exports: [VolumeNameComponent],
 })

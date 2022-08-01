@@ -1,8 +1,6 @@
 <lib-form-section
-  title="Data Volumes"
-  text="Additional volumes that will be mounted in your Notebook"
-  i18n-title
-  i18n-text
+  title="{{ 'formDataVolumes.dataVolumes' | translate }}"
+  text="{{ 'formDataVolumes.dataVolumesDesc' | translate }}"
 >
   <mat-accordion>
     <mat-expansion-panel
@@ -91,9 +89,8 @@
       [disabled]="readonly"
       (click)="addNewVolume()"
       mat-stroked-button
-      i18n
     >
-      + Add new volume
+      + {{ 'formDataVolumes.addVolumeCaps' | translate }}
     </button>
 
     <button
@@ -102,9 +99,8 @@
       [disabled]="readonly"
       (click)="attachExistingVolume()"
       mat-stroked-button
-      i18n
     >
-      + Attach existing volume
+      + {{ 'formDataVolumes.attactVolumeCaps' | translate }}
     </button>
   </div>
 </lib-form-section>

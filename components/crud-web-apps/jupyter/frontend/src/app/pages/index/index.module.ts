@@ -7,6 +7,9 @@ import { IndexComponent } from './index.component';
 import { ServerTypeComponent } from './index-default/server-type/server-type.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { TranslateModule } from '@ngx-translate/core';
+
+
 @NgModule({
   declarations: [IndexComponent, ServerTypeComponent],
   imports: [
@@ -15,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     IndexDefaultModule,
     MatIconModule,
     MatTooltipModule,
+    TranslateModule.forRoot()
   ],
 })
 export class IndexModule {}

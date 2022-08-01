@@ -1,10 +1,10 @@
-<lib-form-section title="GPUs" i18n-title>
+<lib-form-section title="{{ 'formGpus.gpus' | translate }}">
   <div class="row" [formGroup]="parentForm.get('gpus')">
     <!--GPUs Number-->
     <mat-form-field class="column" appearance="outline">
-      <mat-label i18n>Number of GPUs</mat-label>
+      <mat-label>{{ "formGpus.numGpus" | translate }}</mat-label>
       <mat-select matNativeControl formControlName="num">
-        <mat-option value="none" i18n="option None">None</mat-option>
+        <mat-option value="none">{{ 'common.optNone' | translate }}</mat-option>
         <mat-option *ngFor="let v of gpusCount" [value]="v">
           {{ v }}
         </mat-option>
@@ -13,7 +13,7 @@
 
     <!--GPUs Vendor-->
     <mat-form-field class="column" appearance="outline">
-      <mat-label i18n>GPU Vendor</mat-label>
+      <mat-label>{{ 'formGpus.gpuVendor' | translate }}</mat-label>
       <mat-select matNativeControl formControlName="vendor" id="gpu-vendor">
         <mat-option
           *ngFor="let v of vendors"
@@ -23,7 +23,7 @@
           {{ v.uiName }}
         </mat-option>
       </mat-select>
-      <mat-error>{{ getVendorError() }}</mat-error>
+      <mat-error>{{ getVendorError() | translate }}</mat-error>
     </mat-form-field>
   </div>
 </lib-form-section>

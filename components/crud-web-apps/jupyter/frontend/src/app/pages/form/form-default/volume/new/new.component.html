@@ -1,26 +1,23 @@
 <mat-form-field appearance="outline" class="wide">
-  <mat-label i18n>Type</mat-label>
+  <mat-label>{{ 'volume.type' | translate }}</mat-label>
   <mat-select
     [value]="volumeType"
     (selectionChange)="typeChanged($event.value)"
   >
-    <mat-option [value]="NEW_VOLUME_TYPE.EMPTY" i18n> Empty volume </mat-option>
+    <mat-option [value]="NEW_VOLUME_TYPE.EMPTY">{{ 'volume.optEmpty' | translate }}</mat-option>
 
     <mat-option
       [value]="NEW_VOLUME_TYPE.ROK_SNAPSHOT"
       *ngIf="env.ui === 'rok'"
-      i18n
     >
       Rok snapshot
     </mat-option>
 
     <mat-option
       [value]="NEW_VOLUME_TYPE.CUSTOM"
-      matTooltip="Edit the K8s PVC full spec"
-      i18n-matTooltip
-      i18n
+      matTooltip="{{ 'volume.optCustomDesc' | translate }}"
     >
-      Custom (Advanced)
+    {{ 'volume.optCustom' | translate }}
     </mat-option>
   </mat-select>
 </mat-form-field>

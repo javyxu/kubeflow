@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { ExistingPvcModule } from './pvc/pvc.module';
 import { AceEditorModule } from 'ng2-ace-editor';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   declarations: [ExistingVolumeComponent],
   imports: [
@@ -20,6 +22,7 @@ import { AceEditorModule } from 'ng2-ace-editor';
     MatSelectModule,
     ExistingPvcModule,
     AceEditorModule,
+    TranslateModule.forRoot()
   ],
   exports: [ExistingVolumeComponent],
 })
