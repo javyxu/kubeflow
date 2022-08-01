@@ -12,7 +12,7 @@
   </button>
 
   <div class="title-margin title">
-    {{ title }}
+    {{ title | translate }}
   </div>
 
   <div class="margin-content">
@@ -33,7 +33,7 @@
           <mat-icon *ngIf="button.icon" class="button-icon">
             {{ button.icon }}
           </mat-icon>
-          {{ button.text }}
+          {{ button.text | translate }
         </button>
       </ng-container>
 
@@ -49,7 +49,7 @@
           <mat-icon *ngIf="button.icon" class="button-icon">
             {{ button.icon }}
           </mat-icon>
-          {{ button.text }}
+          {{ button.text | translate }}
         </button>
       </ng-container>
     </ng-container>

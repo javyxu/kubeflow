@@ -8,6 +8,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { NamespaceSelectComponent } from './namespace-select.component';
 import { SnackBarModule } from '../snack-bar/snack-bar.module';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { SnackBarModule } from '../snack-bar/snack-bar.module';
     MatFormFieldModule,
     MatSelectModule,
     SnackBarModule,
+    TranslateModule.forRoot(),
   ],
   declarations: [NamespaceSelectComponent],
   exports: [NamespaceSelectComponent],

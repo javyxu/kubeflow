@@ -9,7 +9,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {
-  MatSpinner,
   MatProgressSpinnerModule,
 } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
@@ -26,6 +25,8 @@ import { AdvancedOptionsComponent } from './advanced-options/advanced-options.co
 import { PopoverModule } from '../popover/popover.module';
 import { SubmitBarComponent } from './submit-bar/submit-bar.component';
 import { StepInfoComponent } from './step-info/step-info.component';
+
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { StepInfoComponent } from './step-info/step-info.component';
     IconModule,
     MatProgressSpinnerModule,
     PopoverModule,
+    TranslateModule.forRoot(),
   ],
   exports: [
     FormSectionComponent,

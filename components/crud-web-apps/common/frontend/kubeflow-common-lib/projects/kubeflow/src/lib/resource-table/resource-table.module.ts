@@ -24,6 +24,8 @@ import { ComponentValueComponent } from './component-value/component-value.compo
 import { PortalModule } from '@angular/cdk/portal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -43,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IconModule,
     DateTimeModule,
     PopoverModule,
+    TranslateModule.forRoot(),
   ],
   declarations: [
     ResourceTableComponent,

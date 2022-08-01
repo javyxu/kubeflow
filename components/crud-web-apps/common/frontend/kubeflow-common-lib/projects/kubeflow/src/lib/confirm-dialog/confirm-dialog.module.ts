@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   declarations: [ConfirmDialogComponent],
   imports: [
@@ -12,6 +14,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatDialogModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    TranslateModule.forRoot(),
   ],
 })
 export class ConfirmDialogModule {}
