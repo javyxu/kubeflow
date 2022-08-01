@@ -22,7 +22,9 @@ import { FormRokComponent } from './pages/form/form-rok/form-rok.component';
 import { IndexDefaultComponent } from './pages/index/index-default/index-default.component';
 import { IndexRokComponent } from './pages/index/index-rok/index-rok.component';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     FormModule,
     KubeflowModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ImmediateErrorStateMatcher },
@@ -50,3 +59,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function httpTranslateLoader(http: HttpClient){
+  return new TranslateHttpLoader(http, "../static/assets/i18n/", ".json");
+}

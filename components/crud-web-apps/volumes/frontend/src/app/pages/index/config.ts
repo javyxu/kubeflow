@@ -1,21 +1,19 @@
 import {
   PropertyValue,
   StatusValue,
-  ActionListValue,
-  ActionIconValue,
   TableConfig,
 } from 'kubeflow';
 
 export const tableConfig: TableConfig = {
   columns: [
     {
-      matHeaderCellDef: $localize`Status`,
+      matHeaderCellDef: 'volumeTable.status',
       matColumnDef: 'status',
       style: { width: '1%' },
       value: new StatusValue(),
     },
     {
-      matHeaderCellDef: $localize`Name`,
+      matHeaderCellDef: 'volumeTable.name',
       matColumnDef: 'name',
       style: { width: '25%' },
       value: new PropertyValue({
@@ -25,7 +23,7 @@ export const tableConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`Age`,
+      matHeaderCellDef: 'volumeTable.age',
       matColumnDef: 'age',
       textAlignment: 'right',
       style: { width: '10%' },
@@ -35,20 +33,20 @@ export const tableConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`Size`,
+      matHeaderCellDef: 'volumeTable.size',
       matColumnDef: 'size',
       textAlignment: 'right',
       style: { width: '10%' },
       value: new PropertyValue({ field: 'capacity', truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Access Mode`,
+      matHeaderCellDef: 'volumeTable.accessMode',
       matColumnDef: 'modes',
       style: { width: '15%' },
       value: new PropertyValue({ field: 'modes', truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Storage Class`,
+      matHeaderCellDef: 'volumeTable.storageClass',
       matColumnDef: 'class',
       style: { width: '10%' },
       value: new PropertyValue({ field: 'class', truncate: true }),

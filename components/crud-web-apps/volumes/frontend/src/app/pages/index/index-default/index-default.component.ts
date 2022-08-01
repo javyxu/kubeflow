@@ -20,6 +20,8 @@ import { Subscription, Observable, Subject } from 'rxjs';
 import { isEqual } from 'lodash';
 import { FormDefaultComponent } from '../../form/form-default/form-default.component';
 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-index-default',
   templateUrl: './index-default.component.html',
@@ -39,7 +41,7 @@ export class IndexDefaultComponent implements OnInit {
 
   buttons: ToolbarButton[] = [
     new ToolbarButton({
-      text: `New Volume`,
+      text: 'volumeTable.newVolumeCaps',
       icon: 'add',
       stroked: true,
       fn: () => {
@@ -54,6 +56,7 @@ export class IndexDefaultComponent implements OnInit {
     public backend: VWABackendService,
     public dialog: MatDialog,
     public snackBar: SnackBarService,
+    public translate: TranslateService,
   ) {}
 
   ngOnInit() {
@@ -106,7 +109,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`Volume was submitted successfully.`,
+          this.translate.instant("volumeTable.submitVoulme"),
           SnackType.Success,
           2000,
         );
@@ -117,13 +120,16 @@ export class IndexDefaultComponent implements OnInit {
 
   public deleteVolumeClicked(pvc: PVCProcessedObject) {
     const deleteDialogConfig: DialogConfig = {
-      title: $localize`Are you sure you want to delete this volume? ${pvc.name}`,
-      message: $localize`Warning: All data in this volume will be lost.`,
-      accept: $localize`DELETE`,
+      title: { 
+        key: 'volumeTable.deleteDialogTitle',
+        params: {name: pvc.name},
+      },
+      message: 'volumeTable.deleteDialogMessage',
+      accept: 'volumeTable.deleteDialogYes',
       confirmColor: 'warn',
-      cancel: $localize`CANCEL`,
+      cancel: 'volumeTable.deleteDialogNo',
       error: '',
-      applying: $localize`DELETING`,
+      applying: 'volumeTable.toolTipDeleting',
       width: '600px',
     };
 
@@ -155,7 +161,7 @@ export class IndexDefaultComponent implements OnInit {
         }
 
         pvc.status.phase = STATUS_TYPE.TERMINATING;
-        pvc.status.message = 'Preparing to delete the Volume...';
+        pvc.status.message = this.translate.instant("volumeTable.deleteVoulme");
         pvc.deleteAction = STATUS_TYPE.UNAVAILABLE;
         this.pvcsWaitingViewer.delete(pvc.name);
       });

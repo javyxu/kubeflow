@@ -1,11 +1,9 @@
 <div class="form--container" mat-dialog-content>
   <form novalidate (ngSubmit)="onSubmit()" [formGroup]="formCtrl">
     <lib-form-section
-      title="New Volume"
-      text="Create a new empty Volume."
+      title="{{ 'volumeTable.newVolumeCaps' | translate }}"
+      text="{{ 'volumeTable.newVolumeDesc' | translate }}"
       icon="fa:fas:hdd"
-      i18n-title
-      i18n-text
     >
     </lib-form-section>
 
@@ -34,14 +32,14 @@
       [sizeControl]="formCtrl.get('size')"
       min="1"
       step="1"
-      label="Volume size in Gi"
+      label="{{ 'volume.sizeInGi' | translate }}"
     ></lib-positive-number-input>
 
     <!--Storage Class-->
     <mat-form-field appearance="outline" class="wide">
-      <mat-label i18n>Storage Class</mat-label>
+      <mat-label>{{ 'volumeTable.storageClass' | translate }}</mat-label>
       <mat-select formControlName="class">
-        <mat-option value="{none}" i18n>None</mat-option>
+        <mat-option value="{none}">None</mat-option>
         <mat-option *ngFor="let sc of storageClasses" [value]="sc">
           {{ sc }}
         </mat-option>
@@ -50,11 +48,11 @@
 
     <!--Access Mode-->
     <mat-form-field appearance="outline" class="wide">
-      <mat-label i18n>Access Mode</mat-label>
+      <mat-label>{{ 'volumeTable.accessMode' | translate }}</mat-label>
       <mat-select formControlName="mode">
-        <mat-option value="ReadWriteOnce" i18n>ReadWriteOnce</mat-option>
-        <mat-option value="ReadOnlyMany" i18n>ReadOnlyMany</mat-option>
-        <mat-option value="ReadWriteMany" i18n>ReadWriteMany</mat-option>
+        <mat-option value="ReadWriteOnce">{{ 'volume.optReadWriteOnce' | translate }}</mat-option>
+        <mat-option value="ReadOnlyMany">{{ 'volume.optReadOnlyMany' | translate }}</mat-option>
+        <mat-option value="ReadWriteMany">{{ 'volume.optReadWriteMany' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -64,13 +62,12 @@
       class="form--button-margin"
       type="submit"
       [disabled]="!formCtrl.valid || blockSubmit"
-      i18n
     >
-      CREATE
+      {{ 'common.createCaps' | translate }}
     </button>
 
-    <button mat-raised-button type="button" (click)="onCancel()" i18n>
-      CANCEL
+    <button mat-raised-button type="button" (click)="onCancel()">
+      {{ 'common.cancelCaps' | translate }}
     </button>
   </form>
 </div>

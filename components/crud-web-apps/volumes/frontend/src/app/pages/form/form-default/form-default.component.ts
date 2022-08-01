@@ -3,15 +3,10 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  FormControl,
-  ValidatorFn,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import {
   NamespaceService,
-  getExistingNameValidator,
-  dns1035Validator,
-  getNameError,
   DIALOG_RESP,
 } from 'kubeflow';
 import { VWABackendService } from 'src/app/services/backend.service';
