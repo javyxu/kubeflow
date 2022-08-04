@@ -1,11 +1,9 @@
 <div class="form--container" mat-dialog-content>
   <form novalidate [formGroup]="formCtrl">
     <lib-form-section
-      title="New ConfigMap"
-      text="Create a new ConfigMap."
+      title="{{ 'configMapTable.newConfigMapCaps' | translate }}"
+      text="{{ 'configMapTable.newConfigDesc' | translate }}"
       icon="fa:fas:hdd"
-      i18n-title
-      i18n-text
     >
     </lib-form-section>
 
@@ -14,27 +12,20 @@
       [nameControl]="formCtrl.get('name')"
       [namespaceControl]="formCtrl.get('namespace')"
       resourceName="ConfigMap"
-      i18n-resourceName
       [existingNames]="configMapNames"
     >
     </lib-form-name-namespace-inputs>
 
     <div>
-      <mat-checkbox formControlName="isSync">Whether to synchronize to another namespace</mat-checkbox>
+      <mat-checkbox formControlName="isSync">{{ 'configMapTable.sync_namespace' | translate }}</mat-checkbox>
     </div>
     
-    <!-- <mat-label i18n>ConfigMap Lable</mat-label>
-    <app-yamls #labeleditor [value]="formCtrl.get('labels').value" mode="yaml" theme="xcode"></app-yamls>
-    <mat-label i18n>ConfigMap Annotation</mat-label>
-    <app-yamls #annotationeditor [value]="formCtrl.get('annotations').value" mode="yaml" theme="xcode"></app-yamls>
-    <mat-label i18n>ConfigMap Data</mat-label> -->
-    <!-- <app-yamls #yamleditor [value]="formCtrl.get('data').value" mode="yaml" theme="xcode"></app-yamls> -->
     <app-list-key-value
       #data
       [formArray]="formCtrl.get('data')"
-      addButtonText="Add ConfigMap Data"
-      keyLabel="Name"
-      valueLabel="Value"
+      addButtonText="{{ 'configMapTable.add_configmap_data' | translate }}"
+      keyLabel="{{ 'configMapTable.keylable' | translate }}"
+      valueLabel="{{ 'configMapTable.valuelable' | translate }}"
     ></app-list-key-value>
     
     <button
@@ -44,13 +35,12 @@
     type="submit"
     (click)="onSubmit()"
     [disabled]="!formCtrl.valid || blockSubmit"
-    i18n
     >
-      CREATE
+    {{ 'common.createCaps' | translate }}
     </button>
 
-    <button mat-raised-button type="button" (click)="onCancel()" i18n>
-      CANCEL
+    <button mat-raised-button type="button" (click)="onCancel()">
+      {{ 'configMapTable.deleteDialogNo' | translate }}
     </button>
   </form>
 </div>

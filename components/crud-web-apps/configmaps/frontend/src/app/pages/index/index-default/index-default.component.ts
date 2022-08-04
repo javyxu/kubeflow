@@ -19,6 +19,7 @@ import { ConfigMapResponseObject, ConfigMapProcessedObject } from 'src/app/types
 import { Subscription } from 'rxjs';
 import { isEqual } from 'lodash';
 import { FormDefaultComponent } from '../../form/form-default/form-default.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-index-default',
@@ -39,7 +40,7 @@ export class IndexDefaultComponent implements OnInit {
 
   buttons: ToolbarButton[] = [
     new ToolbarButton({
-      text: `New ConfigMap`,
+      text: 'configMapTable.newConfigMapCaps',
       icon: 'add',
       stroked: true,
       fn: () => {
@@ -54,6 +55,7 @@ export class IndexDefaultComponent implements OnInit {
     public backend: CMWABackendService,
     public dialog: MatDialog,
     public snackBar: SnackBarService,
+    public translate: TranslateService,
   ) {}
 
   ngOnInit() {
@@ -109,7 +111,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`ConfigMap was submitted successfully.`,
+          this.translate.instant('configMapTable.submitConfigMap'),
           SnackType.Success,
           2000,
         );
@@ -128,7 +130,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`ConfigMap was submitted successfully.`,
+          this.translate.instant('configMapTable.submitConfigMap'),
           SnackType.Success,
           2000,
         );
@@ -139,13 +141,16 @@ export class IndexDefaultComponent implements OnInit {
 
   public deleteConfigMapClicked(configMap: ConfigMapProcessedObject) {
     const deleteDialogConfig: DialogConfig = {
-      title: $localize`Are you sure you want to delete this configMap? ${configMap.name}`,
-      message: $localize`Warning: All data in this configMap will be lost.`,
-      accept: $localize`DELETE`,
+      title: {
+        key: 'configMapTable.deleteDialogTitle',
+        params: {name: configMap.name}
+      },
+      message: 'configMapTable.deleteDialogMessage',
+      accept: 'configMapTable.deleteDialogYes',
       confirmColor: 'warn',
-      cancel: $localize`CANCEL`,
+      cancel: 'configMapTable.deleteDialogNo',
       error: '',
-      applying: $localize`DELETING`,
+      applying: 'configMapTable.deleteConfigMap',
       width: '600px',
     };
 
@@ -177,7 +182,7 @@ export class IndexDefaultComponent implements OnInit {
         }
 
         configMap.status.phase = STATUS_TYPE.TERMINATING;
-        configMap.status.message = 'Preparing to delete the ConfigMap...';
+        configMap.status.message = this.translate.instant('configMapTable.prepaerDeleteConfigMap');
         configMap.deleteAction = STATUS_TYPE.UNAVAILABLE;
         configMap.editAction = STATUS_TYPE.UNAVAILABLE;
         this.configsWaitingViewer.delete(configMap.name);

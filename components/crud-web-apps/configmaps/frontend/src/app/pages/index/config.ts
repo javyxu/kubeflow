@@ -7,7 +7,7 @@ import {
 export const tableConfig: TableConfig = {
   columns: [
     {
-      matHeaderCellDef: $localize`Name`,
+      matHeaderCellDef: 'configMapTable.name',
       matColumnDef: 'name',
       style: { width: '15%' },
       value: new PropertyValue({
@@ -17,7 +17,7 @@ export const tableConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`Data`,
+      matHeaderCellDef:'configMapTable.data',
       matColumnDef: 'data',
       textAlignment: 'left',
       style: { width: '65%' },
@@ -29,7 +29,7 @@ export const tableConfig: TableConfig = {
         truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Created`,
+      matHeaderCellDef: 'configMapTable.age',
       matColumnDef: 'create',
       textAlignment: 'left',
       style: { width: '10%' },
