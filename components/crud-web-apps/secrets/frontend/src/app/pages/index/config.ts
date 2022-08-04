@@ -6,7 +6,7 @@ import {
 export const tableConfig: TableConfig = {
   columns: [
     {
-      matHeaderCellDef: $localize`Name`,
+      matHeaderCellDef: 'secretTable.name',
       matColumnDef: 'name',
       style: { width: '15%' },
       value: new PropertyValue({
@@ -16,7 +16,7 @@ export const tableConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`Labels`,
+      matHeaderCellDef: 'secretTable.label',
       matColumnDef: 'labels',
       textAlignment: 'left',
       style: { width: '25%' },
@@ -28,7 +28,7 @@ export const tableConfig: TableConfig = {
         truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Annotations`,
+      matHeaderCellDef: 'secretTable.annotation',
       matColumnDef: 'annotations',
       textAlignment: 'left',
       style: { width: '35%' },
@@ -40,14 +40,14 @@ export const tableConfig: TableConfig = {
         truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Type`,
+      matHeaderCellDef: 'secretTable.type',
       matColumnDef: 'type',
       textAlignment: 'left',
       style: { width: '15%' },
       value: new PropertyValue({ field: 'type', truncate: true }),
     },
     {
-      matHeaderCellDef: $localize`Created`,
+      matHeaderCellDef: 'secretTable.age',
       matColumnDef: 'create',
       textAlignment: 'left',
       style: { width: '10%' },

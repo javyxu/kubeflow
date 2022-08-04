@@ -19,6 +19,7 @@ import { SecretResponseObject, SecretProcessedObject } from 'src/app/types';
 import { Subscription } from 'rxjs';
 import { isEqual } from 'lodash';
 import { FormDefaultComponent } from '../../form/form-default/form-default.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-index-default',
@@ -39,7 +40,7 @@ export class IndexDefaultComponent implements OnInit {
 
   buttons: ToolbarButton[] = [
     new ToolbarButton({
-      text: `New Secret`,
+      text: 'secretTable.newSecretCaps',
       icon: 'add',
       stroked: true,
       fn: () => {
@@ -54,6 +55,7 @@ export class IndexDefaultComponent implements OnInit {
     public backend: VWABackendService,
     public dialog: MatDialog,
     public snackBar: SnackBarService,
+    public translate: TranslateService,
   ) {}
 
   ngOnInit() {
@@ -109,7 +111,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`Secret was submitted successfully.`,
+          this.translate.instant('secretTable.submitSecret'),
           SnackType.Success,
           2000,
         );
@@ -128,7 +130,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`Secret was submitted successfully.`,
+          this.translate.instant('secretTable.submitSecret'),
           SnackType.Success,
           2000,
         );
@@ -139,13 +141,16 @@ export class IndexDefaultComponent implements OnInit {
 
   public deleteSecretClicked(secret: SecretProcessedObject) {
     const deleteDialogConfig: DialogConfig = {
-      title: $localize`Are you sure you want to delete this secret? ${secret.name}`,
-      message: $localize`Warning: All data in this secret will be lost.`,
-      accept: $localize`DELETE`,
+      title: {
+        key: 'secretTable.deleteDialogTitle',
+        params: {name: secret.name},
+      },
+      message: 'secretTable.deleteDialogMessage',
+      accept: 'secretTable.deleteDialogYes',
       confirmColor: 'warn',
-      cancel: $localize`CANCEL`,
+      cancel: 'secretTable.deleteDialogNo',
       error: '',
-      applying: $localize`DELETING`,
+      applying: 'secretTable.deleteSecret',
       width: '600px',
     };
 
@@ -177,7 +182,7 @@ export class IndexDefaultComponent implements OnInit {
         }
 
         secret.status.phase = STATUS_TYPE.TERMINATING;
-        secret.status.message = 'Preparing to delete the Secret...';
+        secret.status.message = this.translate.instant('secretTable.prepaerDeleteSecret');
         secret.deleteAction = STATUS_TYPE.UNAVAILABLE;
         secret.editAction = STATUS_TYPE.UNAVAILABLE;
         this.configsWaitingViewer.delete(secret.name);

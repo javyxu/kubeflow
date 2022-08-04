@@ -25,8 +25,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { YamlsModule } from './pages/form/yamls/yamls.module';
 import { ListKeyValueModule } from './pages/form/list-key-value/list-key-value.module';
 
-
-import { HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,13 @@ import { HttpClientModule } from '@angular/common/http';
     ListKeyValueModule,
     KubeflowModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ImmediateErrorStateMatcher },
@@ -56,3 +64,7 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function httpTranslateLoader(http: HttpClient){
+  return new TranslateHttpLoader(http, "../static/assets/i18n/", ".json");
+}

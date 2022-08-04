@@ -12,14 +12,14 @@ const actionsCol: TableColumn = {
   value: new ActionListValue([
     new ActionIconValue({
       name: 'edit',
-      tooltip: $localize`Edit Secret`,
+      tooltip: 'secretTable.editSecretCaps',
       color: 'warn',
       field: 'editAction',
       iconReady: 'material:edit',
     }),
     new ActionIconValue({
       name: 'delete',
-      tooltip: $localize`Delete Secret`,
+      tooltip: 'secretTable.deleteSecretCaps',
       color: 'warn',
       field: 'deleteAction',
       iconReady: 'material:delete',
