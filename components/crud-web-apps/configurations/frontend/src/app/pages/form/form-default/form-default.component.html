@@ -1,8 +1,8 @@
 <div class="form--container" mat-dialog-content>
   <form novalidate [formGroup]="formCtrl">
     <lib-form-section
-      title="New Notebook Config"
-      text="Create a new Notebook Config"
+      title="{{ 'configTable.newConfigCaps' | translate }}"
+      text="{{ 'configTable.newConfigDesc' | translate }}"
       icon="fa:fas:hdd"
       i18n-title
       i18n-text
@@ -20,40 +20,40 @@
     </lib-form-name-namespace-inputs>
 
     <div>
-      <mat-checkbox formControlName="isSync">Whether to synchronize to another namespace</mat-checkbox>
+      <mat-checkbox formControlName="isSync">{{ 'configTable.sync_namespace' | translate }}</mat-checkbox>
     </div>
     
     <mat-form-field
       appearance="outline"
       class="wide"
     >
-      <mat-label i18n>Configuration Desc</mat-label>
+      <mat-label>{{ 'configTable.config_desc' | translate }}</mat-label>
       <input matInput formControlName="desc" type="text" />
     </mat-form-field>
     
-    <mat-label i18n>Notebook Envs</mat-label>
+    <mat-label>{{ 'configTable.notebook_env' | translate }}</mat-label>
     <app-list-key-value
       #envs
       [formArray]="formCtrl.get('envs')"
       [fromLabels]=secrets
       (selectionChange)="onSelectionChange($event)"
-      addButtonText="Add Env"
-      keyLabel="Env Name"
-      fromLabel="Env From"
-      valueLabel="Env Value"
+      addButtonText="{{ 'configTable.env_button_text' | translate }}"
+      keyLabel="{{ 'configTable.keylable' | translate }}"
+      fromLabel="{{ 'configTable.fromlable' | translate }}"
+      valueLabel="{{ 'configTable.valuelable' | translate }}"
     ></app-list-key-value>
 
-    <mat-label i18n>Notebook Config Files</mat-label>
+    <mat-label>{{ 'configTable.notebook_configfile' | translate }}</mat-label>
     <app-list-key-value
       #volumes
       [formArray]="formCtrl.get('volumes')"
       [fromLabels]=configmaps
       (selectionChange)="onNBSelectionChange($event)"
-      addButtonText="Add Config File"
-      keyLabel="Config Name"
-      fromLabel="Config From"
-      valueLabel="Config Value"
-      pathLabel="Config Path"
+      addButtonText="{{ 'configTable.config_button_text' | translate }}"
+      keyLabel="{{ 'configTable.keylable' | translate }}"
+      fromLabel="{{ 'configTable.fromlable' | translate }}"
+      valueLabel="{{ 'configTable.valuelable' | translate }}"
+      pathLabel="{{ 'configTable.pathlable' | translate }}"
       valueMultSelect=true
     ></app-list-key-value>
 
@@ -64,13 +64,12 @@
     type="submit"
     [disabled]="!formCtrl.valid || blockSubmit"
     (click)="onSubmit()"
-    i18n
     >
-      CREATE
+      {{ 'common.createCaps' | translate }}
     </button>
 
-    <button mat-raised-button type="button" (click)="onCancel()" i18n>
-      CANCEL
+    <button mat-raised-button type="button" (click)="onCancel()">
+      {{ 'common.cancelCaps' | translate }}
     </button>
   </form>
 </div>

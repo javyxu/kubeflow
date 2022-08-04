@@ -20,6 +20,8 @@ import { Subscription } from 'rxjs';
 import { isEqual } from 'lodash';
 import { FormDefaultComponent } from '../../form/form-default/form-default.component';
 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-index-default',
   templateUrl: './index-default.component.html',
@@ -39,7 +41,7 @@ export class IndexDefaultComponent implements OnInit {
 
   buttons: ToolbarButton[] = [
     new ToolbarButton({
-      text: `New Notebook Config`,
+      text: 'configTable.newConfigCaps',
       icon: 'add',
       stroked: true,
       fn: () => {
@@ -54,6 +56,7 @@ export class IndexDefaultComponent implements OnInit {
     public backend: VWABackendService,
     public dialog: MatDialog,
     public snackBar: SnackBarService,
+    public translate: TranslateService,
   ) {}
 
   ngOnInit() {
@@ -109,7 +112,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`Configuration was submitted successfully.`,
+          this.translate.instant("configTable.submitConfig"),
           SnackType.Success,
           2000,
         );
@@ -128,7 +131,7 @@ export class IndexDefaultComponent implements OnInit {
     ref.afterClosed().subscribe(res => {
       if (res === DIALOG_RESP.ACCEPT) {
         this.snackBar.open(
-          $localize`Configuration was submitted successfully.`,
+          this.translate.instant("configTable.submitConfig"),
           SnackType.Success,
           2000,
         );
@@ -139,13 +142,16 @@ export class IndexDefaultComponent implements OnInit {
 
   public deleteConfigClicked(secret: ConfigProcessedObject) {
     const deleteDialogConfig: DialogConfig = {
-      title: $localize`Are you sure you want to delete this configuration? ${secret.name}`,
-      message: $localize`Warning: All data in this configuration will be lost.`,
-      accept: $localize`DELETE`,
+      title: {
+        key: 'configTable.deleteDialogTitle',
+        params: {name: secret.name},
+      },
+      message: 'configTable.deleteDialogMessage',
+      accept: 'configTable.deleteDialogYes',
       confirmColor: 'warn',
-      cancel: $localize`CANCEL`,
+      cancel: 'configTable.deleteDialogNo',
       error: '',
-      applying: $localize`DELETING`,
+      applying: 'configTable.deleteConfig',
       width: '600px',
     };
 
@@ -177,7 +183,7 @@ export class IndexDefaultComponent implements OnInit {
         }
 
         secret.status.phase = STATUS_TYPE.TERMINATING;
-        secret.status.message = 'Preparing to delete the Config...';
+        secret.status.message = this.translate.instant("configTable.deleteDialogMessage");
         secret.deleteAction = STATUS_TYPE.UNAVAILABLE;
         secret.editAction = STATUS_TYPE.UNAVAILABLE;
         this.configsWaitingViewer.delete(secret.name);

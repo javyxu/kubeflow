@@ -6,7 +6,7 @@ import {
 export const tableConfig: TableConfig = {
   columns: [
     {
-      matHeaderCellDef: $localize`Name`,
+      matHeaderCellDef: 'configTable.name',
       matColumnDef: 'name',
       style: { width: '15%' },
       value: new PropertyValue({
@@ -16,7 +16,7 @@ export const tableConfig: TableConfig = {
       }),
     },
     {
-      matHeaderCellDef: $localize`Desc`,
+      matHeaderCellDef: 'configTable.desc',
       matColumnDef: 'desc',
       textAlignment: 'left',
       style: { width: '15%' },
@@ -47,7 +47,7 @@ export const tableConfig: TableConfig = {
     //     truncate: true }),
     // },
     {
-      matHeaderCellDef: $localize`Created`,
+      matHeaderCellDef: 'configTable.age',
       matColumnDef: 'create',
       textAlignment: 'left',
       style: { width: '10%' },
