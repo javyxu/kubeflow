@@ -186,10 +186,19 @@ app-toolbar>header {
 }
 
 #NamespaceSelector {
-    flex-basis: 33%;
+    flex-basis: 92%;
 }
 
 #NamespaceSelector>paper-dropdown-menu {
+    color: var(--accent-color);
+    --paper-input-container-focus-color: var(--accent-color);
+}
+
+#LanguageSelector {
+    flex-basis: 8%;
+}
+
+#LanguageSelector>paper-dropdown-menu {
     color: var(--accent-color);
     --paper-input-container-focus-color: var(--accent-color);
 }

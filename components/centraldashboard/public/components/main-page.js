@@ -33,6 +33,7 @@ import logo from '../assets/logo.svg';
 
 import './registration-page.js';
 import './namespace-selector.js';
+import './language-selector.js';
 import './dashboard-view.js';
 import './activity-view.js';
 import './not-found-view.js';
@@ -123,6 +124,7 @@ export class MainPage extends
             // eslint-disable-next-line
             '_routePageChanged(routeData.page,subRouteData.path,routeHash.path)',
             '_namespaceChanged(queryParams.ns)',
+            '_languageChanged(queryParams.lang)',
         ];
     }
 
@@ -287,6 +289,8 @@ export class MainPage extends
         this._setInIframe(isIframe);
         this._setHideSidebar(hideSidebar);
 
+        this.set('queryParams.lang', this.language);
+
         // If iframe <-> [non-frame OR other iframe]
         if (!this.persistent || hideSidebar || isIframe !== this.inIframe) {
             this.$.MainDrawer.close();
@@ -304,6 +308,16 @@ export class MainPage extends
             this.namespacedItemTemplete.includes('{ns}')) {
             this.set('subRouteData.path',
                 this.namespacedItemTemplete.replace('{ns}', namespace));
+        }
+    }
+
+    _languageChanged(language) {
+        // update languaged menu item when language is changed
+        // by language selector
+        if (this.languagedItemTemplete &&
+            this.languagedItemTemplete.includes('{lang}')) {
+            this.set('subRouteData.path',
+                this.languagedItemTemplete.replace('{lang}', language));
         }
     }
 

@@ -31,7 +31,7 @@ div#grid
                         paper-icon-item.external
                             paper-ripple
                             paper-item-body(two-line)
-                                .header [[item.headerText]]
+                                .header {{localize(item.text)}}
                                 aside(secondary) [[item.secondaryText]]
                             paper-icon-button.button(icon='open-in-new',
                                 slot='item-icon', alt='[[item.text]]', tabindex=-1)
@@ -45,4 +45,4 @@ div#grid
                             .header {{localize(item.text)}}
                             aside(secondary) {{localize(item.desc)}}
                         paper-icon-button.button(icon='open-in-new',
-                            slot='item-icon', alt='[[item.text]]', tabindex=-1)
+                            slot='item-icon', alt='{{localize(item.text)}}', tabindex=-1)
