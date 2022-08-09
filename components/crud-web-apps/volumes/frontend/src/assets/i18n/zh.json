@@ -67,14 +67,14 @@
     },
     "formWorkspaceVolume": {
       "workspaceVolume": "工作空间盘",
-      "workspaceVolumeDesc": "将要挂载的卷配置为您的个人工作区。",
-      "ckbNoPersistent": "不要将您home文件夹作为挂载持久卷。",
+      "workspaceVolumeDesc": "将要挂载的盘配置为您的个人工作区。",
+      "ckbNoPersistent": "不要将您home文件夹作为挂载持久盘。",
       "msgNoPersistent": "Your workspace will not be persistent. You will lose all data in it, if your notebook is terminated for any reason.",
-      "toolTipDeleteVolume": "删除卷",
+      "toolTipDeleteVolume": "删除盘",
       "deleteVolume": "删除",
-      "toolTipShowVolumeDeatils": "显示卷信息",
+      "toolTipShowVolumeDeatils": "显示盘信息",
       "showVolumeDeatils": "打开",
-      "toolTipHideVolumeDeatils": "隐藏卷信息",
+      "toolTipHideVolumeDeatils": "隐藏盘信息",
       "hideVolumeDeatils": "收起",
       "addVolumeCaps": "增加存储盘",
       "attactVolumeCaps": "选择已存在的数据集"
@@ -86,7 +86,7 @@
       "optExisting": "以及存在",
       "name": "名称",
       "optCustomDesc": "编辑K8S的PVC",
-      "optK8S": "Kubernetes卷",
+      "optK8S": "Kubernetes盘",
       "optCustom": "自定义 (高级)",
       "errorNameRequired": "The volume name can't be empty",
       "errorNamePattern": "The volume name can only contain lowercase alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character",
@@ -165,14 +165,14 @@
       "stoppingNotebookServer": "准备停止Notebook服务..."
     },
     "volumeTable": {
-      "title": "数据卷",
-      "newVolumeCaps": "新建数据卷",
-      "newVolumeDesc": "创建一个新的空数据卷",
+      "title": "数据盘",
+      "newVolumeCaps": "新建数据盘",
+      "newVolumeDesc": "创建一个新的空数据盘",
       "thStatus": "Status",
       "toolTipAttached": "Attached",
       "toolTipUnattached": "Unattached",
       "toolTipDeleting": "删除中",
-      "toolTipDelete": "删除卷",
+      "toolTipDelete": "删除盘",
       "name": "名称",
       "status": "状态",
       "age": "时间",
@@ -181,11 +181,11 @@
       "lblNone": "(none)",
       "accessMode": "授权模式",
       "storageClass": "存储类",
-      "deleteDialogTitle": "你要删除数据卷: {{name}}",
-      "deleteDialogMessage": "确定要删除这个数据卷嘛，这个行为是不可逆的。",
+      "deleteDialogTitle": "你要删除数据盘: {{name}}",
+      "deleteDialogMessage": "确定要删除这个数据盘吗，这个行为是不可逆的。",
       "deleteDialogYes": "删除",
       "deleteDialogNo": "取消",
-      "submitVoulme": "数据卷创建成功。",
-      "deleteVoulme": "准备删除数据卷..."
+      "submitVoulme": "数据盘创建成功。",
+      "deleteVoulme": "准备删除数据盘..."
     }
 }
