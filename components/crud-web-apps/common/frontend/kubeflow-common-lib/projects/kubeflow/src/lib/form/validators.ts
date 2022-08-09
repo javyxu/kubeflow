@@ -3,8 +3,6 @@ import {
   ValidationErrors,
   ValidatorFn,
   AbstractControl,
-  FormGroup,
-  FormControl,
   Validators,
 } from '@angular/forms';
 
@@ -102,9 +100,9 @@ export function getNameError(nameCtrl: AbstractControl, resource: string) {
     // TODO: "pattern", is generic error, this might break in the future
     return dns1035Validator.help;
   } else if (nameCtrl.hasError('maxlength')) {
-    return $localize`Name is too long`;
+    return 'commonProject.namespaceInput.nameTooLong';
   } else {
-    return $localize`Name cannot be empty`;
+    return 'commonProject.namespaceInput.nameCannotBeEmpty';
   }
 }
 
