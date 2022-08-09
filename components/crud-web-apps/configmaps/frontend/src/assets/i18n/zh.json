@@ -215,24 +215,24 @@
       "prepaerDeleteConfig": "准备删除配置..."
     },
     "configMapTable": {
-      "title": "配置",
-      "newConfigMapCaps": "新建配置",
-      "editConfigCaps": "编辑配置",
-      "deleteConfigCaps": "删除配置",
-      "newConfigDesc": "创建一个新的配置",
+      "title": "集群配置",
+      "newConfigMapCaps": "新建集群配置",
+      "editConfigCaps": "编辑集群配置",
+      "deleteConfigCaps": "删除集群配置",
+      "newConfigDesc": "创建一个新的集群配置",
       "name": "名称",
       "data": "数据",
       "age": "时间",
       "sync_namespace": "是否同步到其他命名空间",
-      "add_configmap_data": "添加配置数据",
+      "add_configmap_data": "添加集群配置数据",
       "keylable": "名称",
       "valuelable": "值",
-      "deleteDialogTitle": "确定要删除这个配置吗？{{name}}",
-      "deleteDialogMessage": "警告: 所有的配置信息将会被删除",
+      "deleteDialogTitle": "确定要删除这个集群配置吗？{{name}}",
+      "deleteDialogMessage": "警告: 所有的集群配置信息将会被删除",
       "deleteDialogYes": "删除",
       "deleteDialogNo": "取消",
-      "submitConfigMap": "配置创建成功",
+      "submitConfigMap": "集群配置创建成功",
       "deleteConfigMap": "删除中",
-      "prepaerDeleteConfigMap": "准备删除配置..."
+      "prepaerDeleteConfigMap": "准备删除集群配置..."
     }
 }
