@@ -30,7 +30,9 @@ function getVolumeType(pvc: V1PersistentVolumeClaim): NEW_VOLUME_TYPE {
 }
 
 export function getVolumeTitle(vol: Volume) {
-  return vol.existingSource ? 'commonProject.volume.existingVolumeCaps' : 'commonProject.volume.newVolumeCaps';
+  return vol.existingSource ? 
+    'commonProject.volume.existingVolumeCaps' : 
+    'commonProject.volume.newVolumeCaps';
 }
 
 export function getVolumeName(vol: Volume): string {
