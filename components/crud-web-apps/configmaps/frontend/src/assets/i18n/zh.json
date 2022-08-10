@@ -214,7 +214,7 @@
     "prepaerDeleteConfig": "准备删除配置..."
   },
   "configMapTable": {
-    "title": "配置",
+    "title": "集群配置管理",
     "newConfigMapCaps": "新建配置",
     "editConfigCaps": "编辑配置",
     "deleteConfigCaps": "删除配置",
