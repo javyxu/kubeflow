@@ -39,8 +39,7 @@
             <mat-icon
               *ngIf="!readonly"
               (click)="onDelete(i, $event)"
-              matTooltip="Delete volume"
-              i18n-matTooltip
+              matTooltip="{{ 'formDataVolumes.deleteVolumeCaps' | translate }}"
               class="delete-icon"
             >
               delete
@@ -48,16 +47,14 @@
 
             <mat-icon
               *ngIf="!openPanel.has(i)"
-              matTooltip="Show volume details"
-              i18n-matTooltip
+              matTooltip="{{ 'formDataVolumes.showVolumeCaps' | translate }}"
             >
               expand_more
             </mat-icon>
 
             <mat-icon
               *ngIf="openPanel.has(i)"
-              matTooltip="Hide volume details"
-              i18n-matTooltip
+              matTooltip="{{ 'formDataVolumes.hideVolumeCaps' | translate }}"
             >
               expand_less
             </mat-icon>

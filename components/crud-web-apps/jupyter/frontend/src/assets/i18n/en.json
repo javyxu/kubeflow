@@ -18,6 +18,9 @@
     "dataVolumes": "Data Volumes",
     "dataVolumesDesc": "Configure the Volumes to be mounted as your Datasets.",
     "addVolumeCaps": "Add new volume",
+    "deleteVolumeCaps": "Delete volume",
+    "showVolumeCaps": "Show volume details",
+    "hideVolumeCaps": "Hide volume details",
     "attactVolumeCaps": "Attach existing volume"
   },
   "formGpus": {
@@ -74,7 +77,7 @@
     "deleteVolume": "delete",
     "toolTipShowVolumeDeatils": "Show volume details",
     "showVolumeDeatils": "expand_more",
-    "toolTipHideVolumeDeatils": "Hidevolume details",
+    "toolTipHideVolumeDeatils": "Hide volume details",
     "hideVolumeDeatils": "expand_less",
     "addVolumeCaps": "Add new volume",
     "attactVolumeCaps": "Attach existing volume"
@@ -132,6 +135,10 @@
       "nameTooLong": "Name is too long",
       "nameAlreadyExists": "Notebook server '{{name}}' already exists",
       "namePattern": "Name must consist of lowercase alphanumeric characters or '-', start with an alphabetic character, and end with an alphanumeric character"
+    },
+    "volume":{
+      "newVolumeCaps": "New volume",
+      "existingVolumeCaps": "Existing volume"
     }
   },
   "dialog": {

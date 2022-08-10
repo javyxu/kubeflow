@@ -17,7 +17,10 @@
     "formDataVolumes": {
       "dataVolumes": "选择数据",
       "dataVolumesDesc": "选择需要挂载的数据集",
-      "addVolumeCaps": "增加存储盘",
+      "addVolumeCaps": "增加数据",
+      "deleteVolumeCaps": "删除数据",
+      "showVolumeCaps": "显示数据详情",
+      "hideVolumeCaps": "隐藏数据详情",
       "attactVolumeCaps": "选择已存在的数据集"
     },
     "formGpus": {
@@ -132,6 +135,10 @@
         "nameTooLong": "Name is too long",
         "nameAlreadyExists": "Notebook server '{{name}}' already exists",
         "namePattern": "Name must consist of lowercase alphanumeric characters or '-', start with an alphabetic character, and end with an alphanumeric character"
+      },
+      "volume":{
+        "newVolumeCaps": "新建卷",
+        "existingVolumeCaps": "已存在卷"
       }
     },
     "dialog": {
