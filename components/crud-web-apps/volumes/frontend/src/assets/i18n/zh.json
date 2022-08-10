@@ -133,6 +133,10 @@
         "nameTooLong": "Name is too long",
         "nameAlreadyExists": "Notebook server '{{name}}' already exists",
         "namePattern": "Name must consist of lowercase alphanumeric characters or '-', start with an alphabetic character, and end with an alphanumeric character"
+      },
+      "volume":{
+        "newVolumeCaps": "新建卷",
+        "existingVolumeCaps": "已存在卷"
       }
     },
     "dialog": {
@@ -168,17 +172,12 @@
       "title": "数据盘",
       "newVolumeCaps": "新建数据盘",
       "newVolumeDesc": "创建一个新的空数据盘",
-      "thStatus": "Status",
-      "toolTipAttached": "Attached",
-      "toolTipUnattached": "Unattached",
       "toolTipDeleting": "删除中",
       "toolTipDelete": "删除盘",
       "name": "名称",
       "status": "状态",
       "age": "时间",
       "size": "大小",
-      "thUsedBy": "Used By",
-      "lblNone": "(none)",
       "accessMode": "授权模式",
       "storageClass": "存储类",
       "deleteDialogTitle": "你要删除数据盘: {{name}}",
