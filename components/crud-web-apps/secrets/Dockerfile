@@ -14,7 +14,7 @@ WORKDIR /src
 ENV NG_CLI_ANALYTICS "ci"
 COPY ./common/frontend/kubeflow-common-lib/package.json ./
 COPY ./common/frontend/kubeflow-common-lib/package-lock.json ./
-RUN npm ci
+RUN npm install
 
 COPY ./common/frontend/kubeflow-common-lib/projects ./projects
 COPY ./common/frontend/kubeflow-common-lib/angular.json .
@@ -35,7 +35,7 @@ COPY ./secrets/frontend/angular.json ./
 COPY ./secrets/frontend/src ./src
 
 ENV NG_CLI_ANALYTICS "ci"
-RUN npm ci
+RUN npm install
 COPY --from=frontend-kubeflow-lib /src/dist/kubeflow/ ./node_modules/kubeflow/
 
 RUN npm run build -- --output-path=./dist/default --configuration=production
