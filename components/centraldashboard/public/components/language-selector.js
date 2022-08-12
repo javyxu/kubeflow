@@ -56,11 +56,6 @@ export class LanguageSelector extends localizationMixin(PolymerElement) {
                     display: flex;
                     @apply --layout-center;
                 }
-                [owner]:not([all-languages]):after {
-                    content: '(Owner)';
-                    margin-left: .25em;
-                    font-size: .8em;
-                }
                 paper-listbox {
                     --paper-listbox-background-color: white;
                     --paper-listbox-color: black;

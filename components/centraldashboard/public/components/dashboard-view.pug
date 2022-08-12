@@ -7,7 +7,7 @@ div#grid
                         iron-icon(icon='kubeflow:bolt', slot='item-icon')
                         paper-item-body(two-line)
                             .header {{localize(item.text)}}
-                            aside(secondary) {{localize(item.desc)}}
+                            aside(secondary) [[item.desc]]
                         paper-ripple
         template(is='dom-if', if='[[platformDetails.resourceChartsLink]]')
             resource-chart(header-text='Cluster CPU Utilization', metric='cpu',
@@ -43,6 +43,6 @@ div#grid
                         paper-ripple
                         paper-item-body(two-line)
                             .header {{localize(item.text)}}
-                            aside(secondary) {{localize(item.desc)}}
+                            aside(secondary) [[item.desc]]
                         paper-icon-button.button(icon='open-in-new',
-                            slot='item-icon', alt='{{localize(item.text)}}', tabindex=-1)
+                            slot='item-icon', alt='[[item.text]]', tabindex=-1)
